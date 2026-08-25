@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Add a Customer{% endblock %}
+
+{% block content %}
+    <h1 class="heading">Add a Customer</h1>
+    <form method="post">
+        <label for="name">Name</label>
+        <input name="name" id="name" required class="text_add">
+
+        <label for="email">Email</label>
+        <input name="email" id="email" class="text_add">
+
+        <button type="submit">Add</button>
+    </form>
+{% endblock %}
