@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}Book Dashboard{% endblock %}
+
+{% block content %}
+    <h1 class="heading">Book Inventory</h1>
+        <div style="text-align: right; position: relative; text-align: right;">
+        <a href="{{ url_for('add_book') }}" class="button1">Add</a>
+        </div>
+
+
+    <form method="get" action="{{url_for('index')}}" class="filter-form">
+        <div class="form-group">
+            <input type="text" name="search" placeholder="Search…" value="{{ search_query or ''}}" class="search">
+        </div>
+
+        <div class="form-group">
+
+                {% for building in buildings %}
+                <div>
+                    <input type="checkbox" name="location" id="loc-{{building['id']}}" value="{{building['id']}}" class="select"
+                    {% if building['id']|string in selected_location%}
+                            checked
+                            {% endif %}>
+                    <label for="loc-{{building['id']}}">{{building['name']}}</label>
+                </div>
+                {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <select name="sort" class="filter">
+                <option value="default" {% if sort_by == 'default' %}selected{% endif %}>None</option>
+                <option value="title" {% if sort_by == 'title' %}selected{% endif %}>Title</option>
+                <option value="author" {% if sort_by == 'author' %}selected{% endif %}>Author</option>
+            </select>
+        </div>
+        <button type="submit">Apply</button>
+
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Location</th>
+                <th>Room</th>
+                <th>Shelf</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>
+                    <a href="{{ url_for('status', book_id = book['id']) }}"
+                       class="{% if book['borrow'] == True %}button67{% else %}button68{% endif %}">Status</a>
+                </td>
+                <td>{{ book['title'] }}</td>
+                <td>{{ book['author'] }}</td>
+                <td>{{ book['building_name'] }}</td>
+                <td>{{ book['room'] }}</td>
+                <td>{{ book['shelf'] }}</td>
+                <td>
+
+                                <a href="{{ url_for('move_book', book_id = book['id']) }}" class="button7">Move</a>
+
+                                 <form method="post" action="{{ url_for('delete_book', book_id = book['id']) }}" onsubmit="return confirm('Are you sure you want to delete {{book['title']}}?')">
+                                            <button type="submit" class="button6">Delete</button>
+                                 </form>
+                            </div>
+                      </div>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+<script src="{{url_for('static', filename='main.js')}}"></script>
+{% endblock %}
