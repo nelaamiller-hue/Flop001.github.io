@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Add a User{% endblock %}
+
+{% block content %}
+    <h1 class="heading">Add a User</h1>
+    <form method="post">
+        <label for="username">Username</label>
+        <input name="username" id="username" required class="text_add">
+
+        <laubel for="password">Password</laubel>
+        <input name="password" id="password" class="text_add">
+
+        <button type="submit">Add</button>
+    </form>
+{% endblock %}
