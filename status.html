@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Book Status{% endblock %}
+
+{% block content %}
+    <h1 class="heading">Book status: {{ book['title'] }} by {{ book['author'] }}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Availability:</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>From</th>
+                <th>To</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% if borrows %}
+            {% for borrows in borrows %}
+            <tr>
+                <td>Borrowed</td>
+                <td>{{ borrows['customer_name'] }}</td>
+                <td>{{ borrows['customer_email'] }}</td>
+                <td>{{ borrows['borrow_date'] }}</td>
+                <td>{{ borrows['return_date'] }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+        <tr>
+            <td>Available</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+
+        </tr>
+{% endif %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('edit_borrow', book_id = book['id']) }}" class="button2">Edit Status</a>
+     <form method="post" action="{{ url_for('return_b', book_id = book['id']) }}" onsubmit="return confirm('Are you sure you want to return {{book['name']}}?')" class="button3">
+                        <button type="submit" class="button3">Return book</button>
+                        </form>
+{% endblock %}
