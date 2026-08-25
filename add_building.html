@@ -1,30 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %}Add a Book{% endblock %}
+{% block title %}Add a Building{% endblock %}
 
 {% block content %}
-    <h1 class="heading">Add a Book</h1>
+    <h1 class="heading">Add a Building</h1>
     <form method="post">
-        <label for="title">Title</label>
-        <input name="title" id="title" required class="text_add">
+        <label for="name">Name</label>
+        <input name="name" id="name" required class="text_add">
 
-        <label for="author">Author</label>
-        <input name="author" id="author" required class="text_add">
-
-        <label for="author">Location</label>
-        <select id="building-select" name="location" required class="filter2">
-            <option value="">Select a building</option>
-            {% for location in locations %}
-                <option value="{{ location['id'] }}">{{ location['name'] }}</option>
-            {% endfor %}
-        </select>
-        <label for="author">Room</label>
-        <select id="room-select" name="room" required disabled class="filter2">
-            <option value="">Select a building first</option>
-        </select>
-
-        <label for="shelf">Shelf</label>
-        <input name="shelf" id="shelf" type="number" required class="text_add">
+        <label for="address">Address</label>
+        <input name="address" id="address" class="text_add">
 
 
         <button type="submit">Add</button>
