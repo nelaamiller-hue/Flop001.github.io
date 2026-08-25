@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Move a Book{% endblock %}
+
+{% block content %}
+    <h1 class="heading">Move a Book</h1>
+     <form method="post">
+     <label for="building-select">Location</label>
+
+        <select id="building-select" name="location" required class="filter2">
+        <option value="">Select a building</option>
+            {% for location in locations %}
+                <option value="{{ location['id'] }}">{{ location['name'] }}</option>
+            {% endfor %}
+        </select>
+
+         <label for="building-select">Room</label>
+        <select id="room-select" name="room" required disabled class="filter2">
+            <option value="">Select a building first</option>
+        </select>
+
+        <label for="shelf">Shelf</label>
+        <input name="shelf" id="shelf" type="number" required class="text_add">
+
+
+        <button type="submit" class="button2">Move</button>
+    </form>
+{% endblock %}
