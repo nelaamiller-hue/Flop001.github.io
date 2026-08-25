@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Library System{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="{{ url_for('index') }}" class="wrapper">Library Management</a>
+            <a href="{{ url_for('index_buildings') }}" class="wrapper">Buildings Management</a>
+            <a href="{{ url_for('index_customers') }}" class="wrapper">Customers Management</a>
+            {% if current_user.admin %}
+            <a href="{{ url_for('index_users') }}" class="wrapper">Users Management</a>
+            {% endif %}
+        </div>
+        <div>
+            {% if current_user.is_authenticated %}
+                <span class="wrapper">{{ current_user.username }}</span>
+                <a href="{{ url_for('logout') }}" class="wrapper">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+            {% endif %}
+        </div>
+    </nav>
+    <main class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert">{{ messages[0] }}</div>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
