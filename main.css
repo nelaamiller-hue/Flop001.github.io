@@ -1,0 +1,335 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    background-color: #fff4f8;
+    color: #212529;
+}
+
+
+.container {
+    width: 80%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffe5ec;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+nav {
+    background-color: #ffb3c6;
+    padding: 1rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #212529;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background-color: #ff8fab;
+}
+
+h1 {
+    color: #ff8fab;
+    border-bottom: 2px solid #fff4f8;
+    padding-bottom: 0.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+th, td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border-bottom-color: #ffe5ec;
+}
+
+th {
+    background-color: #ffb3c6;
+}
+
+tr:hover {
+    background-color: #ff8fab;
+}
+
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input {
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #212529;
+    border-color: #ffe5ec;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 0.8rem;
+    background-color: #ffb3c6;
+    color: #212529;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form button:hover {
+    background-color: #ff8fab;
+}
+.heading{
+    font-size: 2rem;
+    color: #212529;
+}
+.button1{
+    display: inline-block;
+    padding: 0.5rem;
+    background-color: #ffb3c6;
+    color: #212529;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    position: absolute;
+    top: -65px;
+    right: 0;
+}
+.button1:hover {
+    background-color: #ff8fab;
+}
+
+.button2{
+    display: inline-block;
+    padding: 0.5rem;
+    background-color: #ffb3c6;
+    color: #212529;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+}
+.button2:hover {
+    background-color: #ff8fab;
+}
+
+.button3{
+    display: inline-block;
+    padding: 0.26rem;
+    background-color: #ffb3c6;
+    color: #212529;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+}
+.button3:hover {
+    background-color: #ff8fab;
+}
+
+.button4{
+    display: inline-block;
+    padding: 0.4rem;
+    background-color: #ffb3c6;
+    float: right;
+    color: #212529;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+}
+.button4:hover {
+    background-color: #ff8fab;
+}
+
+.button45{
+    display: inline-block;
+    padding: 0.4rem;
+    background-color: #ffb3c6;
+    float: right;
+    color: #212529;
+    border: none;
+    border-radius: 4px;
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+    font-size: 1rem;
+    text-decoration: none;
+}
+.button45:disabled:hover{
+    background-color: #ffb3c6;
+}
+
+.button5{
+    display: inline-block;
+    padding: 0.8rem;
+    background-color: #ffb3c6;
+    float: right;
+    color: #212529;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.button5:hover {
+    background-color: #ff8fab;
+}
+
+.button6{
+    display: inline-block;
+    padding: 0.5rem;
+    background-color: #ffb3c6;
+    color: #212529;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    width: 70px;
+
+}
+.button6:hover {
+    background-color: #ff8fab;
+}
+
+.button7{
+    display: inline-block;
+    padding: 0.5rem;
+    background-color: #ffb3c6;
+    color: #212529;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    width: 55px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+.button7:hover {
+    background-color: #ff8fab;
+}
+
+.hidden{
+    display: none;
+}
+.wrapper {
+    white-space: nowrap;
+}
+
+.search {
+    padding: 6px;
+    border: none;
+    width: 99%;
+    font-size: 17px;
+    font-family: -apple-system;
+    color: #212529;
+    background-color: #fff4f8;
+}
+
+.filter {
+    background-color: #ffb3c6;
+    color: #ffe5ec;
+    margin-top: 4px;
+    margin-right: 16px;
+    font-size: 15px;
+    margin-bottom: 16px;
+    font-family: -apple-system;
+}
+
+.select{
+    background-color: #ffb3c6;
+}
+
+.add {
+    color: #ffe5ec;
+    background-color: #ffb3c6;
+    padding: 20px;
+    border: none;
+    font-size: 14px;
+    font-family: -apple-system;
+    margin-bottom: 8px;
+}
+
+.text_add{
+    color: #212529;
+    background-color: #fff4f8;
+    font-size: 14px;
+    font-family: -apple-system;
+    padding: 8px;
+    margin-bottom: 6px;
+}
+
+.filter2{
+    color: #212529;
+    background-color: #fff4f8;
+    font-size: 14px;
+    font-family: -apple-system;
+    padding: 8px;
+    margin-bottom: 6px;
+}
+
+.button67{
+    display: inline-block;
+    padding: 0.5rem;
+    background-color: #ff4646;
+    color: #212529;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    width: 55px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+.button67:hover {
+    background-color: #ff8fab;
+}
+
+.button68{
+    display: inline-block;
+    padding: 0.5rem;
+    background-color: #559f55;
+    color: #212529;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    width: 55px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+.button68:hover {
+    background-color: #ff8fab;
+}
