@@ -1,32 +1,34 @@
+
 {% extends 'base.html' %}
 
-{% block title %}Add a Book{% endblock %}
+{% block title %}Add Copy{% endblock %}
 
 {% block content %}
-    <h1 class="heading">Add a Book</h1>
-    <form method="post">
-        <label for="title">Title</label>
-        <input name="title" id="title" required class="text_add">
+    <h1>Add Copy for: <em>{{ title['title'] }}</em></h1>
+    <p>by {{ title['author'] }}</p>
 
-        <label for="author">Author</label>
-        <input name="author" id="author" required class="text_add">
-
-        <label for="author">Location</label>
-        <select id="building-select" name="location" required class="filter2">
-            <option value="">Select a building</option>
-            {% for location in locations %}
-                <option value="{{ location['id'] }}">{{ location['name'] }}</option>
-            {% endfor %}
-        </select>
-        <label for="author">Room</label>
-        <select id="room-select" name="room" required disabled class="filter2">
-            <option value="">Select a building first</option>
-        </select>
-
-        <label for="shelf">Shelf</label>
-        <input name="shelf" id="shelf" type="number" required class="text_add">
-
-
-        <button type="submit">Add</button>
+    <form method="POST" class="add-book-form">
+        <div class="form-group">
+            <label for="building-select">Building</label>
+            <select name="building" id="building-select" required>
+                <option value="" disabled selected>Select a building</option>
+                {% for building in buildings %}
+                    <option value="{{ building['id'] }}">{{ building['name'] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="room-select">Room</label>
+            <select name="room" id="room-select" required disabled>
+                <option value="">Select a building first</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="shelf-select">Shelf</label>
+            <select name="shelf" id="shelf-select" required disabled>
+                <option value="">Select a room first</option>
+            </select>
+        </div>
+        <button type="submit">Add This Copy</button>
     </form>
 {% endblock %}
